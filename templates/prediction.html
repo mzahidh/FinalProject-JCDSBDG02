@@ -1,0 +1,92 @@
+{% extends 'layout.html'%}
+<html>
+    <head>
+
+
+    </head>
+    <body>
+    {% block body %}
+    <h2 style="text-align: center;background-color: yellowgreen ;" >LET'S PREDICT YOUR CHANCE TO GET GREEN JOBS-GREEN FREE COST AUDIT PROGRAM</h2>
+    <div class="container pt 5">
+        <div class="row justify-content-left">
+            <div class="col-md-6 mt-3">
+                <b><h3> Fill This Form to Predict! </h3></b>
+                <form action="/" method="POST">
+                    <!-- Gas Utility-->
+                    <select class="form-control form-control-sm" name="Gas Utility">
+                        <option value="" disabled selected>Select Gas Utility</option>
+                        {% for item in data_gas %}
+                            <option value ="{{item}}">{{item}}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- Electric Utility-->
+                    <select class="form-control form-control-sm mt-2" name="Electric Utility">
+                        <option value="" disabled selected>Select Electric Utility</option>
+                        {% for item in data_electric %}
+                            <option value ="{{item}}">{{item}}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- Customer Type-->
+                    <select name="Size Type" class="form-control form-control-sm mt-2">
+                        <option value="Customer Type" disabled selected> Select Customer Type </option>
+                        <option value="Market">Market</option>
+                        <option value="Assisted">Assisted</option>
+                    </select>
+                    <!-- Low-Rise or Home Performance Indicator Type-->
+                    <select name="Low-Rise or Home Performance Indicator Type" class="form-control form-control-sm mt-2">
+                        <option value="Low-Rise or Home Performance Indicator" disabled selected> Select Indicator Type </option>
+                        <option value="Home Performance">Home Performance</option>
+                        <option value="Low-Rise">Low-Rise</option>
+                    </select>
+                    <!-- Total Project Cost -->
+                    <input type='number' name="Total Project Cost" min='0' placeholder="Total Project Cost" class="form-control form-control-sm mt-2"> 
+                    <!-- Total Incentives -->
+                    <input type='number' name="Total Incentives" min='0' placeholder="Total Incentives" class="form-control form-control-sm mt-2">
+                    <!-- Type of Program Financing -->
+                    <select class="form-control form-control-sm mt-2" name="Type of Program Financing">
+                        <option value="" disabled selected>Select Type of Program Financing</option>
+                        {% for item in data_financing %}
+                            <option value ="{{item}}">{{item}}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- Amount Financed Through Program -->
+                    <input type='number' name="Amount Financed Through Program" min='0' placeholder="Amount Financed Through Program" class="form-control form-control-sm mt-2">
+                    <!-- Pre-Retrofit Home Heating Fuel Type-->
+                    <select class="form-control form-control-sm mt-2" name="Pre-Retrofit Home Heating Fuel Type">
+                        <option value="" disabled selected>Select Pre-Retrofit Home Heating Fuel Type</option>
+                        {% for item in data_heating %}
+                            <option value ="{{item}}">{{item}}</option>
+                        {% endfor %}
+                    </select>
+                    <!-- Size of Home (sq.ft) -->
+                    <input type='number' name="Size of Home" min='0' placeholder="Size of Home (sq.ft)" class="form-control form-control-sm mt-2"> 
+                    <!-- Volume of Home -->
+                    <input type='number' name="Volume of Home" min='0' placeholder="Volume of Home (Cube)" class="form-control form-control-sm mt-2">
+                    <!-- Number of Units -->
+                    <input type='number' name="Number of Units" min='1' max='4' placeholder="Number of Units (1-4)" class="form-control form-control-sm mt-2">
+                    <!-- Measure Type-->
+                    <select name="Measure Type" class="form-control form-control-sm mt-2">
+                        <option value="Measure Type" disabled selected>Select Measure Type </option>
+                        <option value="Building Shell">Building Shell</option>
+                        <option value="Heating and Cooling">Heating and Cooling </option>
+                        <option value="Water Heater">Water Heater </option>
+                    </select>
+                    <!-- Estimated Annual kWh Savings -->
+                    <input type='number' name="Estimated Annual kWh Savings" placeholder="Estimated Annual kWh Savings " class="form-control form-control-sm mt-2"> 
+                    <!-- Estimated Annual MMBtu Savings -->
+                    <input type='number' name="Estimated Annual MMBtu Savings" placeholder="Estimated Annual MMBtu Savings " class="form-control form-control-sm mt-2">
+                    <!-- First Year Energy Savings $ Estimate -->
+                    <input type='number' name="First Year Energy Savings $ Estimate" min='0' placeholder="First Year Energy Savings $ Estimated" class="form-control form-control-sm mt-2">
+                    <button type="submit" class="btn btn-success mt-4">Let's Predict! </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    {% endblock body %}
+    </body>
+</html>
