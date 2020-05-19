@@ -11,7 +11,7 @@
         <div class="row justify-content-left">
             <div class="col-md-6 mt-3">
                 <b><h3> Fill This Form to Predict! </h3></b>
-                <form action="/" method="POST">
+                <form action="/predict" method="POST">
                     <!-- Gas Utility-->
                     <select class="form-control form-control-sm" name="Gas Utility">
                         <option value="" disabled selected>Select Gas Utility</option>
@@ -42,15 +42,6 @@
                     <input type='number' name="Total Project Cost" min='0' placeholder="Total Project Cost" class="form-control form-control-sm mt-2"> 
                     <!-- Total Incentives -->
                     <input type='number' name="Total Incentives" min='0' placeholder="Total Incentives" class="form-control form-control-sm mt-2">
-                    <!-- Type of Program Financing -->
-                    <select class="form-control form-control-sm mt-2" name="Type of Program Financing">
-                        <option value="" disabled selected>Select Type of Program Financing</option>
-                        {% for item in data_financing %}
-                            <option value ="{{item}}">{{item}}</option>
-                        {% endfor %}
-                    </select>
-                    <!-- Amount Financed Through Program -->
-                    <input type='number' name="Amount Financed Through Program" min='0' placeholder="Amount Financed Through Program" class="form-control form-control-sm mt-2">
                     <!-- Pre-Retrofit Home Heating Fuel Type-->
                     <select class="form-control form-control-sm mt-2" name="Pre-Retrofit Home Heating Fuel Type">
                         <option value="" disabled selected>Select Pre-Retrofit Home Heating Fuel Type</option>
@@ -78,14 +69,24 @@
                     <!-- First Year Energy Savings $ Estimate -->
                     <input type='number' name="First Year Energy Savings $ Estimate" min='0' placeholder="First Year Energy Savings $ Estimated" class="form-control form-control-sm mt-2">
                     <button type="submit" class="btn btn-success mt-4">Let's Predict! </button>
+                    <br>
+                    <br>
                 </form>
             </div>
         </div>
     </div>
 
-
-
-
+    <div class="second">
+        <div class="col-md-12 text-center">
+              <form>
+                   <button class="btn btn-info" type="submit" formaction="/">Home</button>
+                   <button class="btn btn-info" type="submit" formaction="/about">Data Visualization</button>
+                   <button class="btn btn-info" type="submit" formaction="/dataset">Dataset </button>
+               </form>
+         </div>
+      </div>
+    <br>
+    <br>
 
     {% endblock body %}
     </body>

@@ -1,24 +1,24 @@
 from flask import Flask, render_template, request, send_from_directory
-from data import gas_utility,electric_utility, type_financing, pre_retrofit_heating
+from data import gas_utility,electric_utility, pre_retrofit_heating
 from predictions import prediction
 from sqlalchemy import create_engine
+import mysql.connector
+import pandas as pd
 
 ## Translate Flask to python object
 app = Flask(__name__)
 
-## Connecting to MySQL Database
-engine = create_engine("mysql+mysqlconnector://root:123456ABCDEF@localhost/final_project?host=localhost?port=3306")
-conn = engine.connect()
-result = conn.execute('select * from final_project.dataset_dashboard').fetchall()
+@app.route('/', methods = ["POST", "GET"])
+def welcome():
+    return render_template('welcome.html')
 
-@app.route('/',methods=['GET','POST'])
+@app.route('/predict',methods=['GET','POST'])
 def index_prediction():
     if request.method == "POST":
         data = request.form
         data = data.to_dict()
         data['Total Project Cost'] = int(data['Total Project Cost'])
         data['Total Incentives'] = int(data['Total Incentives'])
-        data['Amount Financed Through Program'] = int(data['Amount Financed Through Program'])
         data['Size of Home'] = int(data['Size of Home'])
         data['Volume of Home'] = int(data['Volume of Home'])
         data['Number of Units'] = int(data['Number of Units'])
@@ -32,8 +32,7 @@ def index_prediction():
             teks = 'Sorry, you are failed to get Green Jobs-Green NY Free/Reduced Cost Audit, try again next year'
         return render_template("result.html",hasil_prediction=teks)
     return render_template('prediction.html',data_gas=sorted(gas_utility),
-    data_electric=sorted(electric_utility),data_financing=sorted(type_financing),
-    data_heating=sorted(pre_retrofit_heating))
+    data_electric=sorted(electric_utility),data_heating=sorted(pre_retrofit_heating))
 
 @app.route('/storage/<path:x>')
 def storage(x):
@@ -42,6 +41,29 @@ def storage(x):
 @app.route('/about', methods = ["POST", "GET"])
 def about():
     return render_template('about.html')
+
+@app.route('/dataset', methods = ["POST", "GET"])
+def dataset():
+    # Connecting to MySQL Database
+    mydb = mysql.connector.connect(
+        host="localhost",
+        user='root',
+        passwd='123456ABCDEF',
+        database='dashboard')
+
+    mycursor= mydb.cursor()
+    mycursor.execute('Select * FROM dataset')
+
+    myresult = mycursor.fetchall()
+    db_dashboard = pd.DataFrame(myresult,columns= mycursor.column_names)
+    db_dashboard = db_dashboard.sample(10)
+
+    # engine = create_engine("mysql+mysqlconnector://root:123456ABCDEF@localhost/dashboard?host=localhost?port=3306")
+    # conn = engine.connect()
+    # result = conn.execute('select * from dashboard.dataset').fetchall()
+    
+    return render_template('dataset.html',column_names=db_dashboard.columns.values,
+    row_data=list(db_dashboard.values.tolist()),zip=zip)
 
 
 if __name__ == '__main__':

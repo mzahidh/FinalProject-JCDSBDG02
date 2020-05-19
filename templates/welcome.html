@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="container">
+    <center><h1 style="text-align: center;background-color: yellowgreen;"><b>Welcome to Green Jobs Program Classification Dashboard </b></h1></center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center><p style="background-color: lightblue;"><b><font size="5">The Green Jobs – Green New York (GJGNY) Program provides New Yorkers with access to energy assessments, installation services, low interest financing, and pathways to training for various green-collar careers. </font></b></p></center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row align-items-end">
+      <div class="col">
+        <form action="/predict">
+            <button type="submit" style="height: 50px; width: 175px; background-color: rgb(4,122,133); color: whitesmoke"
+            class="btn btn-info">Predict Now! </button>
+        </form>
+      </div>
+      <div class="col">
+        <form method="POST" action="/about">
+        <button type="submit" style="height: 50px; width: 175px; background-color: rgb(4,122,133); color: whitesmoke"
+        class="btn btn-info">Data Visualization</button>
+    </form>
+      </div>
+      <div class="col">
+        <form method="POST" action="/dataset">
+        <button type="submit" style="height: 50px; width: 175px; background-color: rgb(4,122,133); color: whitesmoke"
+        class="btn btn-info">Dataset</button>
+    </form>
+      </div>
+    </div>
+</div>
+
+
+
+{% endblock body %}

@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <center><h2 style="text-align: center;background-color: yellowgreen;"><b> Sample of Dataset </b></h2></center>
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    {% for col in column_names %}
+                    <th>{{col}}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in row_data %}
+                <tr class="table-primary">
+                    {% for col,row_ in zip(column_names, row) %}
+                        <td>{{row_}}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+  <br>
+  <br>
+    <div class="second">
+        <div class="col-md-12 text-center">
+              <form>
+                   <button class="btn btn-info" type="submit" formaction="/">Home </button>
+                   <button class="btn btn-info" type="submit" formaction="/predict">Predict </button>
+                   <button class="btn btn-info" type="submit" formaction="/about">Data Visualization </button>
+               </form>
+         </div>
+      </div>
+    <br>
+    <br>
+{% endblock body %}
+

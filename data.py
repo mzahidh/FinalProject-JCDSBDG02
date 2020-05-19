@@ -10,9 +10,5 @@ electric_utility = ['National Grid', 'New York State Electric & Gas',
        'Rochester Gas & Electric', 'Municipal (Not Qualified)',
        'Orange & Rockland', 'Long Island Power Authority']
 
-type_financing = ['Not Financed Through The Legacy Program Financing Option',
-       'Green Jobs - Green NY Smart Energy Loan',
-       'Green Jobs - Green NY On-Bill Recovery Loan', 'ESMART', 'ESTAR']
-
 pre_retrofit_heating = ['Natural Gas', 'Kerosene', 'Oil', 'Propane', 'Electricity',
        'Wood Pellets', 'Coal', 'Wood']
