@@ -15,7 +15,7 @@ This dataset have 29 columns and 57924 rows of information.
 
 
 ## Machine Learning Modelling
-After missing value and multivariate outlier has been handled, then I have to select which columns to become a features in machine learning model using some statistical method, that is Chi-Squared testing.
+After missing value and multivariate outlier handled, then I have to select which columns to become a features in machine learning model using some statistical method, that is Chi-Squared testing.
 
 These are the steps to produce Machine Learning Model that I use,
 1. Feature Engineering
