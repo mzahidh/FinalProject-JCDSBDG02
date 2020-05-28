@@ -1,5 +1,5 @@
 # Green Jobs Program Classification Prediction
-Final Project Job Connector Data Science Bandung Batch 2 Purwadhika
+Final Project Job Connector Data Science Bandung Batch 2 Purwadhika, Muhammad Zahid
 
 > The Green Jobs - Green New York Program provides New Yorkers with access to energy assesments, installation services, low interest financing, and pathway to training for various green-collar careers
 
