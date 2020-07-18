@@ -46,19 +46,19 @@ I use Flask to create this dashboard. There are 5 pages:
 
 **2. Predict**
 
-[![predict.png](https://i.postimg.cc/13Bx48nN/predict.png)](https://postimg.cc/bZZVBNRz)
+[![predict.png](https://i.postimg.cc/SRQKzDRN/predict.png)](https://postimg.cc/hzwnk8VH)
 
 **3. Result**
 
-[![result.png](https://i.postimg.cc/NFD8Rv1b/result.png)](https://postimg.cc/fS30hFq0)
+[![result.png](https://i.postimg.cc/4yMTN5h0/result.png)](https://postimg.cc/8fhYZL4d)
 
 **4. Data Visualization**
 
-[![visualization.png](https://i.postimg.cc/CMss3kWD/visualization.png)](https://postimg.cc/qggKnhBM)
+[![visualization.png](https://i.postimg.cc/vBZRrjrj/visualization.png)](https://postimg.cc/Lqw0Rx0B)
 
 **5. Sample Dataset**
 
-[![dataset.png](https://i.postimg.cc/gJq3PbBd/dataset.png)](https://postimg.cc/xJ8XKh2F)
+[![dataset.png](https://i.postimg.cc/Jhb769Bz/dataset.png)](https://postimg.cc/67pNTb0k)
 
 
 
