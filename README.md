@@ -7,6 +7,10 @@ This dataset taken from kaggle [https://www.kaggle.com/new-york-state/nys-reside
 
 This dataset have 29 columns and 57924 rows of information. 
 
+The code scatter to three files:
+  1. Final Project - Data Preprocessing.ipynb -> To see Data Cleaning step.
+  2. Final Project - Exploratory Data Analysis.ipynb -> To see what insight that can get from this dataset.
+  3. Final Project - Machine Learning Modelling.ipynb -> To see my model of Regression and Classification method for this dataset.
 
 #### In this project, there are 3 steps that I did:
 -    Data Cleaning (Handle Missing Value and Outlier)
